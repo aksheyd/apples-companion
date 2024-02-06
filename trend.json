@@ -1,12 +1,1 @@
-{'Response': {'destinyMemberships': [
-            {'crossSaveOverride': 3, 'applicableMembershipTypes': [2,3], 'isPublic': True, 'membershipType': 3, 'membershipId': '4611686018489338403', 'displayName': 'Apples', 'bungieGlobalDisplayName': 'Apples', 'bungieGlobalDisplayNameCode': 7377
-            },
-            {'crossSaveOverride': 3, 'applicableMembershipTypes': [], 'isPublic': True, 'membershipType': 2, 'membershipId': '4611686018527122914', 'displayName': 'akracious_', 'bungieGlobalDisplayName': 'Apples', 'bungieGlobalDisplayNameCode': 7377
-            }
-        ], 
-        'bungieNetUser': {'membershipId': '22122887', 'uniqueName': 'Apples#7377', 'displayName': 'Apples', 'profilePicture': 70083, 'profileTheme': 1125, 'userTitle': 0, 'successMessageFlags': '0', 'isDeleted': False, 'about': '', 'firstAccess': '2019-10-02T01: 57: 51.413Z', 'lastUpdate': '2020-08-02T07: 29: 09.165Z', 'psnDisplayName': 'akracious_', 'showActivity': True, 'locale': 'en', 'localeInheritDefault': False, 'showGroupMessaging': True, 'profilePicturePath': '/img/profile/avatars/halo2chief001.gif', 'profileThemeName': 'd2_25', 'userTitleDisplay': 'Newbie', 'statusText': '', 'statusDate': '0001-01-01T00: 00: 00Z', 'steamDisplayName': 'Apples', 'twitchDisplayName': 'akraci0us', 'cachedBungieGlobalDisplayName': 'Apples', 'cachedBungieGlobalDisplayNameCode': 7377
-        }, 'membershipOverrides': {'4611686018527122914': {'membershipIdOverriding': '4611686018489338403', 'membershipTypeOverriding': 3, 'dateOverridden': '2022-11-28T02: 53: 57.25Z'
-            }
-        }
-    }, 'ErrorCode': 1, 'ThrottleSeconds': 0, 'ErrorStatus': 'Success', 'Message': 'Ok', 'MessageData': {}
-}
+Enter your username followed by a # and your 4 digit code: 

@@ -23,7 +23,7 @@ def get_numeric_id(display_name, display_name_code, membership_type):
         if search_data["ErrorCode"] == 1:
             # Assuming the first result is the correct player
             numeric_id = search_data["Response"][0]["membershipId"]
-            print(f"Numeric ID for {display_name}: {numeric_id}")
+            # print(f"Numeric ID for {display_name}: {numeric_id}")
             return numeric_id
         else:
             print(f"Error: {search_data['ErrorCode']}, Message: {search_data['Message']}")
@@ -36,22 +36,24 @@ def get_membership_id(numeric_id):
 
     if response.status_code == 200:
         membership_id = response.json()['Response']['bungieNetUser']['membershipId']
-        print(f"Membership ID for {numeric_id}: {membership_id}")
+        # print(f"Membership ID for {numeric_id}: {membership_id}")
         return membership_id
     else:
         print(f"Error: {response.status_code}")
 
 def get_stats():
     # Get the list of all vendors in Destiny 2
-    id = get_numeric_id("Apples", 7377, "All")
+    username = input("Enter your username followed by a # and your 4 digit code: ")
+    username, code = username.split("#")
+    id = get_numeric_id(username, code, "All")
     membership_id = get_membership_id(id)
     # this asked for membership type not id u dunce
     response = requests.get(base_url + f"Destiny2/3/Account/{id}/Stats/", headers=headers)
 
-    print(response.json())
     if response.status_code == 200:
-        trending_data = response.json()
-        print(trending_data)
+        trending_data = response.json()["Response"]["mergedAllCharacters"]["merged"]["allTime"]["secondsPlayed"]["basic"]["value"]
+        trending_data = round(trending_data / 60 / 60)
+        print(f"{trending_data} hours played")
 
     else:
         print(f"Error: {response.status_code}")
