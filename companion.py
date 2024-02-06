@@ -42,27 +42,24 @@ def get_membership_id(numeric_id):
         print(f"Error: {response.status_code}")
 
 def get_stats():
-    # Get the list of all vendors in Destiny 2
+    # move this to a flask architecture
     username = input("Enter your username followed by a # and your 4 digit code: ")
     username, code = username.split("#")
     id = get_numeric_id(username, code, "All")
-    membership_id = get_membership_id(id)
-    # this asked for membership type not id u dunce
+    # membership_id = get_membership_id(id)
+
     response = requests.get(base_url + f"Destiny2/3/Account/{id}/Stats/", headers=headers)
 
     if response.status_code == 200:
         trending_data = response.json()["Response"]["mergedAllCharacters"]["merged"]["allTime"]["secondsPlayed"]["basic"]["value"]
         trending_data = round(trending_data / 60 / 60)
         print(f"{trending_data} hours played")
-
     else:
         print(f"Error: {response.status_code}")
 
 
 
 if __name__ == "__main__":
-    # Example usage: Find the numeric ID for a player named "examplePlayer" on Xbox (platform 1)
-    # get_numeric_id("Apples#7377", 3)
     get_stats()
 
     
