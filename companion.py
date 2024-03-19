@@ -58,8 +58,5 @@ def get_stats():
         print(f"Error: {response.status_code}")
 
 
-
 if __name__ == "__main__":
     get_stats()
-
-    
